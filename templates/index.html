@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Play Tennis | Prediction App</title>
+    <title>Play Sky Diving | Prediction App</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,13 +14,14 @@
     <style>
       body {
         font-family: sans-serif;
+        background-image: url('images.jpg'); 
       }
 
       .title {
         display: block;
         padding: 15px;
         width: 100%;
-        background-color: cornflowerblue;
+        background-color: rgb(99, 179, 223);
         color: white;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       }
@@ -38,7 +39,7 @@
         width: 60%;
         padding: 10px;
         border: 0;
-        border-bottom: 1px solid cornflowerblue;
+        border-bottom: 1px solid rgb(8, 10, 15);
         font-weight: bold;
       }
 
@@ -48,7 +49,7 @@
 
       .input-form > input:focus {
         outline: 0;
-        border-bottom: 2px solid cornflowerblue;
+        border-bottom: 2px solid rgb(0, 0, 0);
       }
 
       .input-form > input:focus::placeholder {
@@ -56,7 +57,7 @@
       }
 
       .input-form > input::placeholder {
-        color: cornflowerblue;
+        color: rgb(243, 239, 244);
         font-weight: normal;
       }
     </style>
@@ -64,9 +65,11 @@
   <body>
     <main>
       <div class="text-center title">
-        <h2>Play Tennis Prediction</h2>
+        <h2>Play Sky Diving Prediction</h2>
+        <h4 class="text-center text-white mt-3">This web has an accuracy rate of 80%</h4>
       </div>
       <div class="container input-container mt-2">
+        
         <h4 class="text-center mt-3">Input Current Weather Data</h4>
         <br />
         <div class="container">
@@ -90,6 +93,7 @@
                   <option value="0">Cool</option>
                   <option value="1">Hot</option>
                   <option value="2">Mild</option>
+                  <option value="3">Chilly</option>
                 </select>
               </div>
               <div class="col-md-6 input-form text-center">
@@ -99,20 +103,22 @@
                 <select class="form-select" id="humidity" name="humidity">
                   <option value="0">High</option>
                   <option value="1">Normal</option>
+                  <option value="2">Low</option>
                 </select>
               </div>
               <div class="col-md-6 input-form text-center">
                 <label class="pb-2 input-group-text" for="wind">Wind</label>
                 <select class="form-select" id="wind" name="wind">
-                  <option value="0">Strong</option>
-                  <option value="1">Weak</option>
+                  <option value="0">Weak</option>
+                  <option value="1">Strong</option>
+                  <option value="2">Normal</option>
                 </select>
               </div>
             </div>
             <div class="row mt-3">
               <div class="d-grid gap-2 col-6 mx-auto">
-                <button type="submit" class="btn btn-success">
-                  Prediksi
+                <button type="submit" class="btn btn-info">
+                  Prediction
                 </button>
               </div>
             </div>
@@ -140,6 +146,7 @@
                   <th>{{ temp }}</th>
                   <th>{{ humidity }}</th>
                   <th>{{ wind }}</th>
+                  <!-- <th>{{ ds }}</th> -->
                 </tr>
               </tbody>
             </table>
@@ -148,7 +155,7 @@
       </div>
       <div class="container input-container mt-2 text-center">
         <h3>Prediction Result</h3>
-        <h4 style="font-weight: bold">Play Tennis : {{ predicted }}</h4>
+        <h4 style="font-weight: bold">Play Sky Diving : {{ predicted }}</h4>
       </div>
     </section>
   </body>
